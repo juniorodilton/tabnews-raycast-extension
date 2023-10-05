@@ -1,6 +1,6 @@
 import { ActionPanel, Detail, List, Action, Icon } from "@raycast/api";
 import { useFetch, usePromise } from "@raycast/utils";
-import { fetchContents } from "./tabnews";
+import { fetchContents, getContetUrlFromPostResponse } from "./tabnews";
 import { useEffect, useState } from "react";
 import { PostResponse, Strategy } from "./types";
 import { getIcon } from "./utils";
@@ -38,6 +38,16 @@ export default function Command() {
               text: item.tabcoins.toString(),
             },
           ]}
+          actions={
+            <ActionPanel title={item.title}>
+              <ActionPanel.Section>
+                {<Action.OpenInBrowser url={getContetUrlFromPostResponse(item)} />}
+              </ActionPanel.Section>
+              <ActionPanel.Section>
+                {<Action.CopyToClipboard content={getContetUrlFromPostResponse(item)} />}
+              </ActionPanel.Section>
+            </ActionPanel>
+          }
         />
       ))}
     </List>
