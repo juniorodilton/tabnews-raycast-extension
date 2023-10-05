@@ -1,8 +1,7 @@
-import { ActionPanel, Detail, List, Action, Icon } from "@raycast/api";
-import { useFetch, usePromise } from "@raycast/utils";
+import { ActionPanel, List, Action, Icon } from "@raycast/api";
 import { fetchContents, getContetUrlFromPostResponse } from "./tabnews";
-import { useEffect, useState } from "react";
-import { PostResponse, Strategy } from "./types";
+import { useState } from "react";
+import { Strategy } from "./types";
 import { getIcon } from "./utils";
 
 export default function Command() {
