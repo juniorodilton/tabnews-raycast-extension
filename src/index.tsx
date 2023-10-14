@@ -38,11 +38,9 @@ export default function Command() {
             },
           ]}
           actions={
-            <ActionPanel title={item.title}>
+            <ActionPanel title="Options">
               <ActionPanel.Section>
                 {<Action.OpenInBrowser url={getContetUrlFromPostResponse(item)} />}
-              </ActionPanel.Section>
-              <ActionPanel.Section>
                 {<Action.CopyToClipboard content={getContetUrlFromPostResponse(item)} />}
               </ActionPanel.Section>
             </ActionPanel>
